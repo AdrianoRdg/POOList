@@ -23,14 +23,16 @@ public class Palindrome {
 
     public void checkPalindrome() {
         String palindromeString = Integer.toString(palindrome);
-        String n1 = "", n2 = "";
+        String inversePalindromeString = "";
 
-        for (int i = 0, j = palindromeString.length() - 1; i < 5; i++, j--) {
-            n1 += palindromeString.charAt(i);
-            n2 += palindromeString.charAt(j);
+        int j = palindromeString.length() - 1;
+
+        while(j >= 0) {
+            inversePalindromeString += palindromeString.charAt(j);
+            j--;
         }
 
-        if (n1.equals(n2)) {
+        if (palindromeString.equals(inversePalindromeString)) {
             System.out.println("The number is a palindrome");
         } else {
             System.out.println("The number is not a palindrome");
